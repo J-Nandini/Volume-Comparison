@@ -51,13 +51,13 @@ def get_plots():
                     color_discrete_map=color_dict, color='Date', title='Single Stream', text='Total Volume SS', 
                     barmode='group', labels={'Total Volume SS': y_label, 'Hours': 'Time (PST)'}, text_auto='.2f')
         fbar.update_layout(title=dict(x=0.5), xaxis={'type':'category', 'showgrid': False}, yaxis={'showgrid': False}, margin=dict(l=50, r=50, t=60, b=20), paper_bgcolor='#4F4F61', plot_bgcolor= '#4F4F61', font_color='white', title_font_color='white')
-        # fbar.update_traces(textfont_size=14, textangle=0, textposition='outside', cliponaxis=False, textfont_color= 'white')
+        
 
         fbar1 = px.bar(df2, x='Hours', y='Total Volume MCO', color='Date', category_orders={'Hours': df2['Hours'].to_list()},
                      color_discrete_map=color_dict, title='Mixed Containers', text='Total Volume MCO', barmode='group',
                       labels={'Total Volume MCO': y_label, 'Hours': 'Time (PST)'}, text_auto='.2f')
         fbar1.update_layout(title=dict(x=0.5), margin=dict(l=50, r=50, t=60, b=20), xaxis={'type':'category', 'showgrid': False}, yaxis={'showgrid': False}, font_color='white', title_font_color='white', paper_bgcolor='#4F4F61', plot_bgcolor='#4F4F61')
-        # fbar1.update_traces(textfont_size=14, textangle=0, textposition='outside', cliponaxis=False, textfont_color='black')
+        
 
         return fbar, fbar1
     return app
